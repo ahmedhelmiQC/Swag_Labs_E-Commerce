@@ -23,12 +23,34 @@
         <javafaker>1.0.2</javafaker>
         <shutterbug>1.6</shutterbug>
         <commons>2.17.0</commons>
+        <surfire-plugin>3.5.1</surfire-plugin>
+        <allure-maven>2.10.0</allure-maven>
 
     </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surfire-plugin}</version> <!-- Replace with the desired version -->
+            </plugin>
+            <!-- Allure Maven Plugin -->
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure-maven}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
-
-
-    <dependencies>
+        <dependencies>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
