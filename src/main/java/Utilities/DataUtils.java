@@ -6,7 +6,7 @@ import com.google.gson.JsonParser;
 import java.io.*;
 import java.util.Properties;
 
-public class DataUtli {
+public class DataUtils {
     private static final String TEST_DATA_PATH = "src/test/resources/TestData/";
 
     public static String getJosnData(String filename , String field) throws FileNotFoundException {
