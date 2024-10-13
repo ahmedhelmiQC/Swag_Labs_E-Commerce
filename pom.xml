@@ -22,7 +22,7 @@
         <Gson>2.11.0</Gson>
         <javafaker>1.0.2</javafaker>
         <shutterbug>1.6</shutterbug>
-        <commons>2.17.0</commons>
+        <commons>2.17.0</commons>  <!-- FileUtils.copyFile from Apache Commons IO is used to copy the screenshot file!-->
         <surfire-plugin>3.5.1</surfire-plugin>
         <allure-maven>2.10.0</allure-maven>
         <aspectj.version>1.9.22.1</aspectj.version>
@@ -121,6 +121,7 @@
             </exclusions>
         </dependency>
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+            <!-- FileUtils.copyFile from Apache Commons IO is used to copy the screenshot file -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>

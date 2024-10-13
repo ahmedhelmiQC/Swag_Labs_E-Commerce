@@ -1,4 +1,4 @@
 package Utilities;
 
-public class LogsUtil {
+public class LogsUtils {
 }
