@@ -10,11 +10,17 @@ public class DataUtils {
     private static final String TEST_DATA_PATH = "src/test/resources/TestData/";
 
     public static String getJosnData(String filename , String field) throws FileNotFoundException {
-        FileReader reader = new FileReader(TEST_DATA_PATH +filename+".json");
-                //// convert Json File To Json Element ///
-        JsonElement jsonElement = JsonParser.parseReader(reader);
-                /// return Json Element AsString //
-        return jsonElement.getAsJsonObject().get(field).getAsString();
+        try {
+            FileReader reader = new FileReader(TEST_DATA_PATH +filename+".json");
+            //// convert Json File To Json Element ///
+            JsonElement jsonElement = JsonParser.parseReader(reader);
+            /// return Json Element AsString //
+            return jsonElement.getAsJsonObject().get(field).getAsString();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return "";
     }
 
     public static String getPropertyData(String filename , String key) throws IOException {

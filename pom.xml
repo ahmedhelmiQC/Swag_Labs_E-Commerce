@@ -21,7 +21,7 @@
         <allure-testng>2.29.0</allure-testng>
         <Gson>2.11.0</Gson>
         <javafaker>1.0.2</javafaker>
-        <shutterbug>1.6</shutterbug>
+        <shutterbug>1.6</shutterbug>  <!-- Take Full Screen Shoot !-->
         <commons>2.17.0</commons>  <!-- FileUtils.copyFile from Apache Commons IO is used to copy the screenshot file!-->
         <surfire-plugin>3.5.1</surfire-plugin>
         <allure-maven>2.10.0</allure-maven>
@@ -109,6 +109,7 @@
             <artifactId>javafaker</artifactId>
             <version>${javafaker}</version>
         </dependency>
+            <!-- Take Full Screen Shoot !-->
         <dependency>
             <groupId>com.assertthat</groupId>
             <artifactId>selenium-shutterbug</artifactId>

@@ -8,6 +8,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.devtools.v127.page.model.Screenshot;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.swing.*;
@@ -67,12 +68,11 @@ public class  Utility {
 
                          ///  Timestamp
     public static String getTimesTemp (){
-        return new SimpleDateFormat("YYYY-MM-DD-HH-MM-SS").format(new Date());
+        return new SimpleDateFormat("yyyy-MM-dd-h-m-ssa").format(new Date());
     }
                       /// DropDown ///
-    public static void dropDown(WebDriver driver , By locator){
-        new WebDriverWait(driver,Duration.ofSeconds(5))
-                .until(ExpectedConditions.visibilityOfElementLocated(locator));
+    public static void dropDown(WebDriver driver , By locator,String option){
+        new Select(findWebElement(driver,locator)).deselectByVisibleText(option);
     }
                       /// Take Screen Shoot //
     public static void takeScreenShoot(WebDriver driver , String screenshotName) throws IOException {
