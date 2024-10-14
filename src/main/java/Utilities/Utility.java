@@ -11,8 +11,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import javax.swing.*;
-import javax.xml.xpath.XPath;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -75,7 +73,7 @@ public class  Utility {
         new Select(findWebElement(driver,locator)).deselectByVisibleText(option);
     }
                       /// Take Screen Shoot //
-    public static void takeScreenShoot(WebDriver driver , String screenshotName) throws IOException {
+    public static void takeScreenShoot(WebDriver driver , String screenshotName) {
 
         try {
             File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE); // Take a screenshot //
@@ -92,7 +90,7 @@ public class  Utility {
 
     }
                         /// Take Full Screen Shoot //
-    public static void takeScreenShoot(WebDriver driver, By locator){
+    public static void takeFullScreenShoot(WebDriver driver, By locator){
         Shutterbug.shootPage(driver, Capture.FULL_SCROLL)
                 .highlight(findWebElement(driver,locator)).save(SCREENSHOT_PATH);
     }
