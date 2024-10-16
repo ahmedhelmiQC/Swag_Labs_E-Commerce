@@ -17,7 +17,6 @@ public class IInvokedMethodListenerClass implements IInvokedMethodListener {
     public void beforeInvocation(
             IInvokedMethod method, ITestResult testResult, ITestContext context) {
 
-        // not implemented
     }
 
 

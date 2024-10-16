@@ -1,12 +1,10 @@
 package Listeners;
 
 import Utilities.LogsUtils;
-import Utilities.Utility;
-import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class ITestListenerCass implements ITestListener {
+public class ITestResultListenerClass implements ITestListener {
     public void onTestStart(ITestResult result) {
         LogsUtils.info("Test case" + result.getName() + "Started");
     }
