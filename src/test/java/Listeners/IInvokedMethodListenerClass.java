@@ -1,13 +1,13 @@
 package Listeners;
 
-import Utilities.LogsUtils;
-import Utilities.Utility;
-import io.qameta.allure.Allure;
+import Utilities.LogsUtilis;
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 
+
+import java.io.File;
 
 import static DriverFactory.DriverFactory.getDriver;
 
@@ -21,9 +21,10 @@ public class IInvokedMethodListenerClass implements IInvokedMethodListener {
 
 
    public void afterInvocation(IInvokedMethod method, ITestResult testResult, ITestContext context) {
-      if (testResult.getStatus()==ITestResult.FAILURE)
-          LogsUtils.info("Test Case " + testResult.getName() + "failed");
-      Utilities.Utility.takeScreenShoot(getDriver(),testResult.getName());
-    }
-
-    }
+       //  File logFile = Utility.getLastFile(LogsUtilis.LOGS_PATH);
+       if (testResult.getStatus() == ITestResult.FAILURE) {
+           LogsUtilis.info("TestCase" + testResult.getName() + "failed");
+           Utilities.Utility.takeScreenShoot(getDriver(), testResult.getName()); /// valid tes case
+       }
+   }
+}

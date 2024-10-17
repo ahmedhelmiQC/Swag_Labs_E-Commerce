@@ -5,17 +5,14 @@ import com.assertthat.selenium_shutterbug.core.Shutterbug;
 import io.qameta.allure.Allure;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
-import org.openqa.selenium.devtools.v127.page.model.Screenshot;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
@@ -76,13 +73,13 @@ public class  Utility {
     public static void takeScreenShoot(WebDriver driver , String screenshotName) {
 
         try {
-            File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE); // Take a screenshot //
-            File target = new File(SCREENSHOT_PATH + screenshotName + "_"+getTimesTemp()+".png");  // Save the screenshot using Apache Commons IO
+            File screenshotSRC = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE); // Take a screenshot //
+            File screenshotFile = new File(SCREENSHOT_PATH + screenshotName + "_"+getTimesTemp()+".png");  // Save the screenshot using Apache Commons IO
 
-            FileUtils.copyFile(src, target); /// copy the screenshot "src" file to the target location
+            FileUtils.copyFile(screenshotSRC, screenshotFile); /// copy the screenshot "screenshotSRC" file to the screenshotFile location
 
                  // Add the screenshot as an attachment in Allure report
-            Allure.addAttachment(screenshotName, Files.newInputStream(Path.of(target.getPath()))); //(name , path)
+            Allure.addAttachment(screenshotName, Files.newInputStream(Path.of(screenshotFile.getPath()))); //(name , path)
         }
         catch (Exception e){
             e.printStackTrace(); // message (System.err.println("Failed to take screenshot"))
