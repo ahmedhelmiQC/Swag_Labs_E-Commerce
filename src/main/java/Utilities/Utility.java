@@ -21,55 +21,55 @@ public class  Utility {
     private static final  String SCREENSHOT_PATH = "test-outputs/screenshoot/";
 
 
-                  /// Clicking //
+                  //TODO  clicking On Element
     public static void clickingOnElement(WebDriver driver , By locator){
         new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.elementToBeClickable(locator));
         driver.findElement(locator).click();
     }
-                       /// Send Data//
+                       //TODO Send Data
     public static void sendData(WebDriver driver,By locator, String data){
         new WebDriverWait(driver,Duration.ofSeconds(5))
                 .until(ExpectedConditions.visibilityOfElementLocated(locator));
         driver.findElement(locator).sendKeys(data);
     }
-                    // Get Data ///
+                    //TODO  Get Data
     public static void getData(WebDriver driver, By locator){
         new WebDriverWait(driver,Duration.ofSeconds(5))
                 .until(ExpectedConditions.visibilityOfElementLocated(locator));
         driver.findElement(locator).getText();
     }
-                      /// General Wait//
+                      //TODO  General Wait
     public static WebDriverWait generalWait(WebDriver driver){
         return new WebDriverWait(driver,Duration.ofSeconds(10));
     }
-
+                    //TODO  findWebElement
     public static WebElement findWebElement(WebDriver driver,By locator)
     {
         return driver.findElement(locator);
     }
 
-                         /// Scrolling Using Actions///
+                         //TODO Scrolling Using Actions
     public static void scrollUsingActions (WebDriver driver , By locator){
         new Actions(driver).scrollToElement((WebElement) locator).perform();
         driver.findElement(locator);
 
     }
-                    /// Scrolling Using Javascript///
+                    //TODO  Scrolling Using Javascript
     public static void scrolling(WebDriver driver,By locator){
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();",findWebElement(driver,locator));
     }
 
 
-                         ///  Timestamp
+                         //TODO  get Times Temp
     public static String getTimesTemp (){
         return new SimpleDateFormat("yyyy-MM-dd-h-m-ssa").format(new Date());
     }
-                      /// DropDown ///
+                      //TODO  DropDown
     public static void dropDown(WebDriver driver , By locator,String option){
         new Select(findWebElement(driver,locator)).deselectByVisibleText(option);
     }
-                      /// Take Screen Shoot //
+                      //TODO  Take Screen Shoot
     public static void takeScreenShoot(WebDriver driver , String screenshotName) {
 
         try {
@@ -86,7 +86,7 @@ public class  Utility {
         }
 
     }
-                        /// Take Full Screen Shoot //
+                        //TODO  Take Full Screen Shoot
     public static void takeFullScreenShoot(WebDriver driver, By locator){
         Shutterbug.shootPage(driver, Capture.FULL_SCROLL)
                 .highlight(findWebElement(driver,locator)).save(SCREENSHOT_PATH);
