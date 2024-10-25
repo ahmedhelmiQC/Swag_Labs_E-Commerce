@@ -33,11 +33,11 @@ public class  Utility {
                 .until(ExpectedConditions.visibilityOfElementLocated(locator));
         driver.findElement(locator).sendKeys(data);
     }
-                    //TODO  Get Data
-    public static void getData(WebDriver driver, By locator){
+                    //TODO  Get Text
+    public static String getText(WebDriver driver, By locator){
         new WebDriverWait(driver,Duration.ofSeconds(5))
                 .until(ExpectedConditions.visibilityOfElementLocated(locator));
-        driver.findElement(locator).getText();
+    return driver.findElement(locator).getText();
     }
                       //TODO  General Wait
     public static WebDriverWait generalWait(WebDriver driver){
