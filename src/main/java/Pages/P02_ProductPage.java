@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
+import java.util.Set;
 
 public class P02_ProductPage {
 
@@ -51,10 +52,28 @@ public class P02_ProductPage {
             return "0";
         }
     }
+
+    public By getNumberOfProductsOnCart() {
+        return numberOfProductsOnCart;
+    }
+
     public boolean comparingNumberOfSelectedWithNumberInCart(){
         return getNumberOfProductsOnCartIcon().equals(getNumberOfSelectedProducts());
     }
+    public P03_Cart clickOnCartButton(){
+        Utility.clickingOnElement(driver,clickOnCartButton);
+        return new P03_Cart(driver);
 
+    }
+    public P02_ProductPage addRandomProducts(int numberOfNeededProducts , int totalNumberOfProducts) {
+        Set<Integer> randomNumbers = Utility.generateAddUniqueNumber(numberOfNeededProducts, totalNumberOfProducts);
+        LogsUtilis.info("Random Number :" + randomNumbers );
+        for (int random : randomNumbers) {
+            By addToCartButtonForAllProducts = By.xpath("(//button[@class])[" + random + "]");
+            Utility.clickingOnElement(driver, addToCartButtonForAllProducts);
+        }
+        return this;
+    }
 
 
 

@@ -46,6 +46,11 @@ public class TC02_Product {
         new P02_ProductPage(getDriver()).addAllProductsToCart();
         Assert.assertTrue(new P02_ProductPage(getDriver()).comparingNumberOfSelectedWithNumberInCart());
     }
+    @Test
+    public void addRandomProductsToCartTC(){
+        new P02_ProductPage(getDriver()).addRandomProducts(5,6);
+        Assert.assertTrue(new P02_ProductPage(getDriver()).comparingNumberOfSelectedWithNumberInCart());
+    }
 
     @AfterMethod
     public void quit(){
