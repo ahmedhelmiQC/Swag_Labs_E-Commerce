@@ -1,8 +1,0 @@
-[INFO] 25-10-2024 23:56:13 [main] [Tests.TC02_Product.login(TC02_Product.java:36)] - null
-[INFO] 25-10-2024 23:56:18 [main] [Tests.TC02_Product.login(TC02_Product.java:38)] - Edge Browser Is Opened 
-[INFO] 25-10-2024 23:56:19 [main] [Tests.TC02_Product.login(TC02_Product.java:40)] - Page Is Redirect To Home Page
-[INFO] 25-10-2024 23:56:20 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test caseaddAllProductStarted
-[INFO] 25-10-2024 23:56:20 [main] [Pages.P02_ProductPage.addAllProductsToCart(P02_ProductPage.java:28)] -  Number Of All Product : 6
-[INFO] 25-10-2024 23:56:21 [main] [Pages.P02_ProductPage.getNumberOfProductsOnCartIcon(P02_ProductPage.java:36)] - Number Of Product On Cart : 6
-[INFO] 25-10-2024 23:56:21 [main] [Pages.P02_ProductPage.getNumberOfSelectedProducts(P02_ProductPage.java:46)] - Number Of Selected Products : Remove
-[INFO] 25-10-2024 23:56:22 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] - Test Case addAllProductpassed
