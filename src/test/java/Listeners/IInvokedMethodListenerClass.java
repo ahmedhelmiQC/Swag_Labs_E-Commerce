@@ -27,7 +27,7 @@ public class IInvokedMethodListenerClass implements IInvokedMethodListener {
        if (testResult.getStatus() == ITestResult.FAILURE) {
            LogsUtilis.info("TestCase" + testResult.getName() + "failed");
            Utilities.Utility.takeScreenShoot(getDriver(), testResult.getName()); /// valid tes case
-           Utility.takeFullScreenShoot(getDriver(),new P02_ProductPage(getDriver()).getNumberOfProductsOnCart());
+           //Utility.takeFullScreenShoot(getDriver(),new P02_ProductPage(getDriver()).getNumberOfProductsOnCart());
        }
    }
 }

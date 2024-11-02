@@ -51,6 +51,11 @@ public class TC02_Product {
         new P02_ProductPage(getDriver()).addRandomProducts(5,6);
         Assert.assertTrue(new P02_ProductPage(getDriver()).comparingNumberOfSelectedWithNumberInCart());
     }
+    @Test
+    public void clickOnCartButton() throws IOException {
+        new P02_ProductPage(getDriver()).clickOnCartButton();
+        Assert.assertTrue(new P02_ProductPage(getDriver()).verifyCartPageURL(getPropertyData("environment","CART_URL")));
+    }
 
     @AfterMethod
     public void quit(){
