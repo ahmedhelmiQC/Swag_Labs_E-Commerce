@@ -116,4 +116,13 @@ public class  Utility {
         }
         return generatedNumber;
      }
+     //TODO Verify URL
+     public static boolean verifyURL(WebDriver driver , String expected){
+        try {
+            generalWait(driver).until(ExpectedConditions.urlToBe(expected));
+        }catch (Exception e){
+            return false;
+        }
+        return true;
+     }
 }

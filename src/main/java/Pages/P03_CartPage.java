@@ -37,6 +37,11 @@ public class P03_CartPage {
     public boolean comparingPrices(String price){
         return getTotalPrice().equals(price);
     }
+    public P04_CheckOutPage clickingOnCheckOutButton(){
+        Utility.clickingOnElement(driver,checkOutButton);
+        return new P04_CheckOutPage(driver);
+
+    }
 
 
 }
