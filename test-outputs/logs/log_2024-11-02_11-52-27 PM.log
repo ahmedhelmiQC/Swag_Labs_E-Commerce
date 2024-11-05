@@ -1,9 +1,0 @@
-[INFO] 02-11-2024 23:52:27 [main] [Tests.TC03_Cart.login(TC03_Cart.java:36)] - null
-[INFO] 02-11-2024 23:52:33 [main] [Tests.TC03_Cart.login(TC03_Cart.java:38)] - Edge Browser Is Opened 
-[INFO] 02-11-2024 23:52:34 [main] [Tests.TC03_Cart.login(TC03_Cart.java:40)] - Page Is Redirect To Home Page
-[INFO] 02-11-2024 23:52:36 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test casecomparingPriceTCStarted
-[INFO] 02-11-2024 23:52:36 [main] [Pages.P02_ProductPage.addRandomProducts(P02_ProductPage.java:74)] - Random Number :[1, 2, 4, 5, 6]
-[INFO] 02-11-2024 23:52:37 [main] [Pages.P02_ProductPage.getTotalPriceOfSelectedProducts(P02_ProductPage.java:95)] - price of selected price5
-[INFO] 02-11-2024 23:52:37 [main] [Pages.P02_ProductPage.getTotalPriceOfSelectedProducts(P02_ProductPage.java:101)] - total Price :113.95
-[INFO] 02-11-2024 23:52:37 [main] [Pages.P03_CartPage.getTotalPrice(P03_CartPage.java:30)] - total Price : 113.95
-[INFO] 02-11-2024 23:52:37 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] - Test Case comparingPriceTCpassed

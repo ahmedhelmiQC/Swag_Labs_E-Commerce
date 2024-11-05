@@ -45,10 +45,15 @@ public class TC04_CheckOut {
         new P01_LoginPage(getDriver()).enterUserName(UserName).enterPassword(Password).clickOnLoginButton();
     }
     @Test
-    public void checkOutTC (){
+    public void checkOutTC () throws IOException {
+        new P02_ProductPage(getDriver()).addRandomProducts(5,6).clickOnCartButton();
+        new P03_CartPage(getDriver()).clickingOnCheckOutButton();
         new P04_CheckOutPage(getDriver()).fillInformation(FirstName,LastName,ZipCode).clickOnContinueButton();
-        Assert.assertTrue(Utility.verifyURL(getDriver(), getPropertyData("environment",)));
-
-
+        LogsUtilis.info(FirstName + " "+LastName + " " + ZipCode);
+        Assert.assertTrue(Utility.verifyURL(getDriver(), getPropertyData("environment","OVERVIEW_URl")));
+    }
+    @AfterMethod
+    public void quit(){
+        getDriver().quit();
     }
 }

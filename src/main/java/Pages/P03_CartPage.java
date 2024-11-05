@@ -38,10 +38,11 @@ public class P03_CartPage {
         return getTotalPrice().equals(price);
     }
     public P04_CheckOutPage clickingOnCheckOutButton(){
+        LogsUtilis.info("The Page Is Redirected to The CheckOut Page");
         Utility.clickingOnElement(driver,checkOutButton);
         return new P04_CheckOutPage(driver);
-
     }
+
 
 
 }
