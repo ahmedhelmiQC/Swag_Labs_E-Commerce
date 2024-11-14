@@ -135,4 +135,13 @@ public class  Utility {
             Arrays.sort(files,Comparator.comparingLong(File::lastModified).reversed());
             return files[0];
     }
+    //TODO Get All Cookies
+    public static Set<Cookie> getAllCookies(WebDriver driver){
+        return driver.manage().getCookies();
+    }
+    //TODO Restore Session
+    public static void restoreSession(WebDriver driver , Set<Cookie> cookies){
+        for (Cookie cookie :cookies)
+            driver.manage().addCookie(cookie);
+    }
 }

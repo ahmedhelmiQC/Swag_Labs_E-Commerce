@@ -7,20 +7,25 @@ import Utilities.DataUtils;
 import Utilities.LogsUtilis;
 import Utilities.Utility;
 import com.github.javafaker.Faker;
+import org.openqa.selenium.Cookie;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Set;
 
 import static DriverFactory.DriverFactory.getDriver;
 import static DriverFactory.DriverFactory.setupDriver;
 import static Utilities.DataUtils.getPropertyData;
+import static Utilities.Utility.getAllCookies;
+import static Utilities.Utility.restoreSession;
 import static java.lang.System.getProperty;
 
 @Listeners({IInvokedMethodListenerClass.class, ITestResultListenerClass.class})
 public class TC05_OverView {
+    private Set<Cookie> cookies;
     private final String UserName  = DataUtils.getJosnData("validlogin", "username");
     private final String Password  = DataUtils.getJosnData("validlogin","password");
     private final String FirstName = DataUtils.getJosnData("information","firstName");
@@ -29,15 +34,20 @@ public class TC05_OverView {
 
     public TC05_OverView() throws FileNotFoundException {
     }
-//    @BeforeClass
-//    public void login() throws IOException {
-//        setupDriver(getPropertyData("environment","Browser"));
-//        LogsUtilis.info("Edge Browser Is Opened");
-//        getDriver().get(getPropertyData("environment", "BASE_URL"));
-//        LogsUtilis.info("Page Redirect To The Home Page");
-//        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-//        new P01_LoginPage(getDriver()).enterUserName(UserName).enterPassword(Password).clickOnLoginButton();
-//    }
+    @BeforeClass
+    public void login() throws IOException {
+
+        setupDriver(getPropertyData("environment","Browser"));
+        LogsUtilis.info("Edge Browser Is Opened");
+        getDriver().get(getPropertyData("environment", "BASE_URL"));
+        LogsUtilis.info("Page Redirect To The Home Page");
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        new P01_LoginPage(getDriver()).enterUserName(UserName).enterPassword(Password).clickOnLoginButton();
+        cookies = getAllCookies(getDriver());
+        quit();
+        getDriver().navigate().refresh();
+
+   }
     @BeforeMethod
     public void setup() throws IOException {
         String browser = getPropertyData("environment","Browser");
@@ -45,8 +55,7 @@ public class TC05_OverView {
         setupDriver(browser);
         getDriver().get(getPropertyData("environment","BASE_URL"));
         LogsUtilis.info("The Page Redirected To The Home Page");
-        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        new P01_LoginPage(getDriver()).enterUserName(UserName).enterPassword(Password).clickOnLoginButton();
+       restoreSession(getDriver(),cookies);
     }
 
     @Test
@@ -68,5 +77,9 @@ public class TC05_OverView {
     @AfterMethod
     public void quit(){
         getDriver().quit();
+    }
+    @AfterClass
+    public void deleteSession(){
+        cookies.clear();
     }
 }
