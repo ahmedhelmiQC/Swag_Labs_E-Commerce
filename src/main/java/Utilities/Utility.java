@@ -2,6 +2,7 @@ package Utilities;
 
 import com.assertthat.selenium_shutterbug.core.Capture;
 import com.assertthat.selenium_shutterbug.core.Shutterbug;
+import dev.failsafe.internal.util.Assert;
 import io.qameta.allure.Allure;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
@@ -125,4 +126,13 @@ public class  Utility {
         }
         return true;
      }
+     //TODO Get Last Log File
+    public static File getLastFile(String folderPath){
+        File forder = new File(folderPath);
+        File[]files = forder.listFiles();
+        if (files.length==0)
+            return null;
+            Arrays.sort(files,Comparator.comparingLong(File::lastModified).reversed());
+            return files[0];
+    }
 }

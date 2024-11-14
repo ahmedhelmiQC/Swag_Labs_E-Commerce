@@ -56,6 +56,15 @@ public class TC05_OverView {
         new P04_CheckOutPage(getDriver()).fillInformation(FirstName,LastName,ZipCode).clickOnContinueButton();
         Assert.assertTrue(new P05_OverView(getDriver()).comparingPrice());
     }
+    @Test
+    public void verifyURLTC() throws IOException {
+        new P02_ProductPage(getDriver()).addAllProductsToCart().clickOnCartButton();
+        new P03_CartPage(getDriver()).clickingOnCheckOutButton();
+        new P04_CheckOutPage(getDriver()).fillInformation(FirstName,LastName,ZipCode).clickOnContinueButton();
+        LogsUtilis.info("The Page Is Redirected To The Finish Order Page" );
+        new P05_OverView(getDriver()).clickOnFinishButton();
+        Assert.assertTrue(Utility.verifyURL(getDriver(),getPropertyData("environment","FINISH_URL")));
+    }
     @AfterMethod
     public void quit(){
         getDriver().quit();

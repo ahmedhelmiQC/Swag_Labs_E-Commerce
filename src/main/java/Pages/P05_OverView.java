@@ -10,6 +10,7 @@ public class P05_OverView {
     final private By subTotalAmount = By.className("summary_subtotal_label");
     final private By tax = By.className("summary_tax_label");
     final private By totalAmount = By.className("summary_total_label");
+    final private By finishButton = By.id("finish");
     private final WebDriver driver;
 
     public P05_OverView(WebDriver driver) {
@@ -34,5 +35,10 @@ public class P05_OverView {
     }
     public boolean comparingPrice(){
         return calculateTotalPrice().equals(String.valueOf(actualTotalAmount()));
+    }
+
+    public P06_FinshOrderPage clickOnFinishButton(){
+        Utility.clickingOnElement(driver,finishButton);
+        return new P06_FinshOrderPage(driver);
     }
 }
