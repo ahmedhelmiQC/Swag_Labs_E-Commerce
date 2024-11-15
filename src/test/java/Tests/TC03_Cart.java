@@ -8,31 +8,46 @@ import Pages.P03_CartPage;
 import Utilities.DataUtils;
 import Utilities.LogsUtilis;
 import Utilities.Utility;
+import org.checkerframework.checker.units.qual.C;
+import org.openqa.selenium.Cookie;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Set;
 
 import static DriverFactory.DriverFactory.getDriver;
 import static DriverFactory.DriverFactory.setupDriver;
 import static Utilities.DataUtils.getPropertyData;
+import static Utilities.Utility.getAllCookies;
+import static Utilities.Utility.restoreSession;
 import static java.lang.System.getProperty;
 
 @Listeners({IInvokedMethodListenerClass.class, ITestResultListenerClass.class})
 public class TC03_Cart {
+    private Set<Cookie>cookies;
         String UserName = DataUtils.getJosnData("validlogin","username");
         String Password = DataUtils.getJosnData("validlogin","password");
 
     public TC03_Cart() throws FileNotFoundException {
     }
-
+    @BeforeClass
+    public void login() throws IOException {
+        String browser = getPropertyData("environment","Browser");
+        LogsUtilis.info(getProperty("browser"));
+        setupDriver(browser);
+        LogsUtilis.info("Edge Browser Is Opened ");
+        getDriver().get(getPropertyData("environment","BASE_URL"));
+        LogsUtilis.info("Page Is Redirect To Home Page");
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        new P01_LoginPage(getDriver()).enterUserName(UserName).enterPassword(Password).clickOnLoginButton();
+        cookies = getAllCookies(getDriver());
+        getDriver().quit();
+    }
   @BeforeMethod
-        public void login() throws IOException {
+        public void setup() throws IOException {
             String browser = getPropertyData("environment","Browser");
             LogsUtilis.info(getProperty("browser"));
             setupDriver(browser);
@@ -40,8 +55,11 @@ public class TC03_Cart {
             getDriver().get(getPropertyData("environment","BASE_URL"));
             LogsUtilis.info("Page Is Redirect To Home Page");
             getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-            new P01_LoginPage(getDriver()).enterUserName(UserName).enterPassword(Password).clickOnLoginButton();
-        }
+        restoreSession(getDriver(),cookies);
+      getDriver().get(getPropertyData("environment","HOME_URL"));
+      getDriver().navigate().refresh();
+
+    }
    @Test
     public void comparingPriceTC(){
         new P02_ProductPage(getDriver()).addRandomProducts(5,6).clickOnCartButton();
@@ -58,4 +76,9 @@ public class TC03_Cart {
     public void quit(){
         getDriver().quit();
     }
+    @AfterClass
+    public void deleteSession(){
+        cookies.clear();
+    }
+
 }

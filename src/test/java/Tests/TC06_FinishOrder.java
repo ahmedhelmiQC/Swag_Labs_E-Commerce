@@ -6,19 +6,25 @@ import Pages.*;
 import Utilities.DataUtils;
 import Utilities.LogsUtilis;
 import com.github.javafaker.Faker;
+import org.openqa.selenium.Cookie;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Set;
 
 import static DriverFactory.DriverFactory.getDriver;
 import static DriverFactory.DriverFactory.setupDriver;
 import static Utilities.DataUtils.getPropertyData;
+import static Utilities.Utility.getAllCookies;
+import static Utilities.Utility.restoreSession;
+
 @Listeners ({IInvokedMethodListenerClass.class, ITestResultListenerClass.class})
 public class TC06_FinishOrder {
 
+    private Set<Cookie>cookies;
     private final String UserName = DataUtils.getJosnData("validlogin","username");
     private final String Password = DataUtils.getJosnData("validlogin","password");
     private final String FirstName = DataUtils.getJosnData("information","firstName");
@@ -26,15 +32,17 @@ public class TC06_FinishOrder {
     private final String ZipCode = new Faker().number().digits(5);
     public TC06_FinishOrder() throws FileNotFoundException {
     }
-//    @BeforeClass
-//    private void login() throws IOException {
-//        setupDriver(getPropertyData("environment","Browser"));
-//        LogsUtilis.info("The Edge Browser Is Opened");
-//        getDriver().get(getPropertyData("environment","BASE_URL"));
-//        LogsUtilis.info("Page Redirect To The Home Page");
-//        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-//        new P01_LoginPage(getDriver()).enterUserName(UserName).enterPassword(Password).clickOnLoginButton();
-//    }
+    @BeforeClass
+    private void login() throws IOException {
+        setupDriver(getPropertyData("environment","Browser"));
+        LogsUtilis.info("The Edge Browser Is Opened");
+        getDriver().get(getPropertyData("environment","BASE_URL"));
+        LogsUtilis.info("Page Redirect To The Home Page");
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        new P01_LoginPage(getDriver()).enterUserName(UserName).enterPassword(Password).clickOnLoginButton();
+         cookies = getAllCookies(getDriver());
+         getDriver().quit();
+    }
     @BeforeMethod
     private void setup() throws IOException {
         setupDriver(getPropertyData("environment","Browser"));
@@ -42,13 +50,12 @@ public class TC06_FinishOrder {
         getDriver().get(getPropertyData("environment","BASE_URL"));
         LogsUtilis.info("Page Redirect To The Home Page");
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        //new P01_LoginPage(getDriver()).enterUserName(UserName).enterPassword(Password).clickOnLoginButton();
+        restoreSession(getDriver(),cookies);
+        getDriver().get(getPropertyData("environment","HOME_URL"));
+        getDriver().navigate().refresh();
     }
     @Test
     public void verifyThankMessageIsDisplayedTC(){
-        //TODO Login Step
-        new P01_LoginPage(getDriver()).enterUserName(UserName)
-                .enterPassword(Password).clickOnLoginButton();
         //TODO add all product to cart Step
         new P02_ProductPage(getDriver()).addAllProductsToCart().clickOnCartButton();
         //TODO Go To The Checkout Page Step
@@ -66,5 +73,9 @@ public class TC06_FinishOrder {
     @AfterMethod
     private void quite(){
         getDriver().quit();
+    }
+    @AfterClass
+    public void deleteSession(){
+        cookies.clear();
     }
 }

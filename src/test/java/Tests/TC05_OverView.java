@@ -40,12 +40,12 @@ public class TC05_OverView {
         setupDriver(getPropertyData("environment","Browser"));
         LogsUtilis.info("Edge Browser Is Opened");
         getDriver().get(getPropertyData("environment", "BASE_URL"));
-        LogsUtilis.info("Page Redirect To The Home Page");
+        LogsUtilis.info("Page Redirect To The URL");
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         new P01_LoginPage(getDriver()).enterUserName(UserName).enterPassword(Password).clickOnLoginButton();
         cookies = getAllCookies(getDriver());
-        quit();
-        getDriver().navigate().refresh();
+        getDriver().quit();
+
 
    }
     @BeforeMethod
@@ -54,8 +54,10 @@ public class TC05_OverView {
         LogsUtilis.info("Edge Browser Is Opened");
         setupDriver(browser);
         getDriver().get(getPropertyData("environment","BASE_URL"));
-        LogsUtilis.info("The Page Redirected To The Home Page");
+        LogsUtilis.info("The Page Redirected To The URL");
        restoreSession(getDriver(),cookies);
+        getDriver().get(getPropertyData("environment","HOME_URL"));
+        getDriver().navigate().refresh();
     }
 
     @Test
