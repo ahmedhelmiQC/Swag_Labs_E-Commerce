@@ -26,7 +26,7 @@
         <surfire-plugin>3.5.1</surfire-plugin>
         <allure-maven>2.10.0</allure-maven>
         <aspectj.version>1.9.22.1</aspectj.version>
-        <suite.logn>Testrunner/LoginSuite.xml</suite.logn>
+        <suite.login>Testrunner/LoginSuite.xml</suite.login>
         <suite.landing>Testrunner/Landing Suite.xml</suite.landing>
         <suite.cart>Testrunner/CartSuite.xml</suite.cart>
         <suite.checkout>Testrunner/CheckOutSuite.xml</suite.checkout>
@@ -55,7 +55,6 @@
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
-
             <!-- Allure Maven Plugin -->
             </plugins>
     </build>

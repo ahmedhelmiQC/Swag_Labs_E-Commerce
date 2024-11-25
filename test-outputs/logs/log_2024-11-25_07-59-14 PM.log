@@ -1,0 +1,5 @@
+[INFO] 25-11-2024 19:59:14 [main] [Tests.TC01_Login.setup(TC01_Login.java:32)] - null
+[INFO] 25-11-2024 19:59:19 [main] [Tests.TC01_Login.setup(TC01_Login.java:34)] - EdgeDriver is opened
+[INFO] 25-11-2024 19:59:21 [main] [Tests.TC01_Login.setup(TC01_Login.java:36)] - Page Is Redirect To The Home Page
+[INFO] 25-11-2024 19:59:22 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test casevalidLoginTCStarted
+[INFO] 25-11-2024 19:59:23 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] - Test Case validLoginTCpassed
