@@ -34,30 +34,62 @@
         <suite.finishorder>Testrunner/FinishOrderSuite.xml</suite.finishorder>
         <suite.regression>Testrunner/RegressionOrderSuite.xml</suite.regression>
     </properties>
-    <build>
-        <directory>test-outputs/target</directory>
-        <plugins>     <!-- Add the following options to your maven-surefire-plugin -->
-            <plugin>  <!--used to run unit tests and integration tests in a Maven-->
-                      <!-- Using Maven Surefire Plugin to execute test cases -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${surfire-plugin}</version>  <!-- Version defined elsewhere -->
-                <configuration>
-                    <!-- Add JVM argument to enable AspectJ runtime weaving -->
-                    <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                    </argLine>
-                    <!-- Define the suite XML files to execute specific test cases -->
-                    <suiteXmlFiles>
-                        <suiteXmlFile>
-                            ${suite.regression}
-                        </suiteXmlFile>
-                    </suiteXmlFiles>
-                </configuration>
-            </plugin>
-            <!-- Allure Maven Plugin -->
-            </plugins>
-    </build>
+    <profiles>
+        <profile>
+            <id>RegressionProfile</id>
+            <build>
+                <directory>test-outputs/target</directory>
+                <plugins>     <!-- Add the following options to your maven-surefire-plugin -->
+                    <plugin>  <!--used to run unit tests and integration tests in a Maven-->
+                        <!-- Using Maven Surefire Plugin to execute test cases -->
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>${surfire-plugin}</version>  <!-- Version defined elsewhere -->
+                        <configuration>
+                            <!-- Add JVM argument to enable AspectJ runtime weaving -->
+                            <argLine>
+                                -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                            </argLine>
+                            <!-- Define the suite XML files to execute specific test cases -->
+                            <suiteXmlFiles>
+                                <suiteXmlFile>
+                                    ${suite.regression}
+                                </suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                    <!-- Allure Maven Plugin -->
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>LoginProfile</id>
+            <build>
+                <directory>test-outputs/target</directory>
+                <plugins>     <!-- Add the following options to your maven-surefire-plugin -->
+                    <plugin>  <!--used to run unit tests and integration tests in a Maven-->
+                        <!-- Using Maven Surefire Plugin to execute test cases -->
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>${surfire-plugin}</version>  <!-- Version defined elsewhere -->
+                        <configuration>
+                            <!-- Add JVM argument to enable AspectJ runtime weaving -->
+                            <argLine>
+                                -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                            </argLine>
+                            <!-- Define the suite XML files to execute specific test cases -->
+                            <suiteXmlFiles>
+                                <suiteXmlFile>
+                                    ${suite.login}
+                                </suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                    <!-- Allure Maven Plugin -->
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
         <dependencies>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
