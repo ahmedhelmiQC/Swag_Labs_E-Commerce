@@ -35,7 +35,7 @@ public class TC01_Login {
         LogsUtilis.info("EdgeDriver is opened");
         getDriver().get(getPropertyData("environment","BASE_URL"));
         LogsUtilis.info("Page Is Redirect To The Home Page");
-        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
     @Test
     public void validLoginTC() throws IOException {

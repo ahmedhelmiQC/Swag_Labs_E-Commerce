@@ -45,7 +45,7 @@ public class  Utility {
 
     //TODO  General wait instance for more flexible use in multiple conditions
     public static WebDriverWait generalWait(WebDriver driver) {
-        return new WebDriverWait(driver, Duration.ofSeconds(10));
+        return new WebDriverWait(driver, Duration.ofSeconds(15));
     }
 
     //TODO  Locate and return a Web Element without additional wait conditions
