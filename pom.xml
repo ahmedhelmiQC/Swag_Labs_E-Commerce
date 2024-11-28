@@ -97,7 +97,6 @@
                                 <!-- Using Maven Surefire Plugin to execute test cases -->
                                 <groupId>org.apache.maven.plugins</groupId>
                                 <artifactId>maven-surefire-plugin</artifactId>
-
                                 <configuration>
                                   <!-- Define the suite XML files to execute specific test cases -->
                                     <suiteXmlFiles>
