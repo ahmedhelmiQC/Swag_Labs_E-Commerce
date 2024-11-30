@@ -82,7 +82,7 @@
     </build>
     <profiles>
         <profile>
-            <id>RegressionProfile</id>
+            <id>Profile</id>
             <build>
                 <plugins>
                     <!-- Reconfigure plugins for regression profile -->
