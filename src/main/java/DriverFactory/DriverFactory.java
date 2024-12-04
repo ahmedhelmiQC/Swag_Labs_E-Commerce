@@ -25,6 +25,8 @@ public class DriverFactory {
             default:
                 EdgeOptions options = new EdgeOptions();
                 options.addArguments("--start-maximized");
+                options.addArguments("--headless", "--disable-gpu", "--no-sandbox", "--remote-debugging-port=9222");
+                options.setBinary("/usr/bin/microsoft-edge");
                 driverThreadLocal.set(new EdgeDriver(options));
         }
     }
