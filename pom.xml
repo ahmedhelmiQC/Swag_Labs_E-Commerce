@@ -36,10 +36,11 @@
         <suite.regression>Testrunner/RegressionOrderSuite.xml</suite.regression>
     </properties>
     <build>
+        <!-- Custom directory for build outputs -->
         <directory>test-outputs/target</directory>
 
         <plugins>
-            <!-- Allure Maven Plugin -->
+            <!-- Allure Maven Plugin: Generates Allure test reports -->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
@@ -48,13 +49,13 @@
                     <execution>
                         <phase>test</phase>
                         <goals>
-                            <goal>
-                                serve
-                            </goal>
+                            <!-- Serve Allure report locally -->
+                            <goal>serve</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
+                    <!-- Allure TestNG adapter version -->
                     <reportVersion>${allure-testng}</reportVersion>
                 </configuration>
             </plugin>
@@ -63,7 +64,8 @@
                 <!-- Using Maven Surefire Plugin to execute test cases -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${surfire-plugin}</version>  <!-- Version defined elsewhere -->
+                <version>${surfire-plugin}</version>
+                <!-- Version defined elsewhere -->
                 <configuration>
                     <!-- Add JVM argument to enable AspectJ runtime weaving -->
                     <argLine>
@@ -71,9 +73,7 @@
                     </argLine>
                     <!-- Define the suite XML files to execute specific test cases -->
                     <suiteXmlFiles>
-                        <suiteXmlFile>
-                            ${suite.regression}
-                        </suiteXmlFile>
+                        <suiteXmlFile>${suite.login}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
@@ -82,13 +82,15 @@
     </build>
     <profiles>
         <profile>
-            <id>RegressionProfile</id>
+            <id>Profile</id>
             <build>
                 <plugins>
+                    <!-- Reconfigure plugins for regression profile -->
                            <!-- Allure Maven Plugin -->
                         <plugin>
                             <groupId>io.qameta.allure</groupId>
                             <artifactId>allure-maven</artifactId>
+
                              <configuration>
                                 <reportVersion>${allure-testng}</reportVersion>
                             </configuration>
@@ -97,11 +99,12 @@
                                 <!-- Using Maven Surefire Plugin to execute test cases -->
                                 <groupId>org.apache.maven.plugins</groupId>
                                 <artifactId>maven-surefire-plugin</artifactId>
+
                                 <configuration>
                                   <!-- Define the suite XML files to execute specific test cases -->
                                     <suiteXmlFiles>
                                         <suiteXmlFile>
-                                            ${suite.regression}
+                                            ${suite.login}
                                         </suiteXmlFile>
                                     </suiteXmlFiles>
                                 </configuration>
