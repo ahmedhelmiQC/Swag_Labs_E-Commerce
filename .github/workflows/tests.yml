@@ -11,4 +11,4 @@ jobs:
           java-version: '21'
           distribution: 'oracle'
       - name: Run the Maven verify phase
-        run: mvn -PRegressionProfile clean test
+        run: mvn -PProfile clean test
