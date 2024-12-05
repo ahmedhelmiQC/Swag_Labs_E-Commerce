@@ -104,7 +104,7 @@
                                   <!-- Define the suite XML files to execute specific test cases -->
                                     <suiteXmlFiles>
                                         <suiteXmlFile>
-                                            ${suite.login}
+                                            ${suite.regression}
                                         </suiteXmlFile>
                                     </suiteXmlFiles>
                                 </configuration>
