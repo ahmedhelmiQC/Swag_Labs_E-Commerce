@@ -73,7 +73,7 @@
                     </argLine>
                     <!-- Define the suite XML files to execute specific test cases -->
                     <suiteXmlFiles>
-                        <suiteXmlFile>${suite.login}</suiteXmlFile>
+                        <suiteXmlFile>${suite.regression}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
