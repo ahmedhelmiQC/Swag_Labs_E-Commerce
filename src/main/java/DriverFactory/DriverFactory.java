@@ -8,7 +8,7 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
-    private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
+    private static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
     public static void setupDriver(String browser){
         switch (browser.toLowerCase())
@@ -16,9 +16,9 @@ public class DriverFactory {
             case "chrome" :
                 ChromeOptions chromeoptions = new ChromeOptions();
                 chromeoptions.addArguments("--start-maximized");
-                chromeoptions.addArguments("--headless");
-                chromeoptions.addArguments("--no-sandbox");
-                chromeoptions.addArguments("--disable-dev-shm-usage");
+//                chromeoptions.addArguments("--headless");
+//                chromeoptions.addArguments("--no-sandbox");
+//                chromeoptions.addArguments("--disable-dev-shm-usage");
                 driverThreadLocal.set(new ChromeDriver(chromeoptions));
 
                 break;

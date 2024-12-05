@@ -29,8 +29,8 @@ public class TC01_Login {
     @BeforeMethod
     public void setup() throws IOException {
         // Condition ? ture or false
-        String browser =  getPropertyData("environment","Browser");
-//        LogsUtilis.info(System.getProperty("browser"));
+        String browser = System.getProperty("browser") !=null? System.getProperty("browser") : getPropertyData("environment","Browser");
+        LogsUtilis.info(System.getProperty("browser"));
         setupDriver(browser);
         LogsUtilis.info("EdgeDriver is opened");
         getDriver().get(getPropertyData("environment","BASE_URL"));
