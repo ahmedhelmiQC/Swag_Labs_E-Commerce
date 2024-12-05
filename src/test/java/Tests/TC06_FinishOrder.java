@@ -38,7 +38,6 @@ public class TC06_FinishOrder {
         String browser = System.getProperty("Browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
         LogsUtilis.info(System.getProperty("browser"));
         setupDriver(browser);
-        LogsUtilis.info("The Page Redirect To Home Page");
         getDriver().get(getPropertyData("environment","BASE_URL"));
              LogsUtilis.info("Page Redirect To The Home Page");
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
