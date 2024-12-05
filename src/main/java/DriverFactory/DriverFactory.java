@@ -16,9 +16,9 @@ public class DriverFactory {
             case "chrome" :
                 ChromeOptions chromeoptions = new ChromeOptions();
                 chromeoptions.addArguments("--start-maximized");
-//                chromeoptions.addArguments("--headless");
-//                chromeoptions.addArguments("--no-sandbox");
-//                chromeoptions.addArguments("--disable-dev-shm-usage");
+                chromeoptions.addArguments("--headless");
+                chromeoptions.addArguments("--no-sandbox");
+                chromeoptions.addArguments("--disable-dev-shm-usage");
                 driverThreadLocal.set(new ChromeDriver(chromeoptions));
 
                 break;
