@@ -40,7 +40,7 @@ public class TC04_CheckOut {
     }
     @BeforeClass
     public void login() throws IOException {
-        String browser = System.getProperty("Browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
+        String browser = System.getProperty("browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
         LogsUtilis.info(System.getProperty("browser"));
         setupDriver(browser);
         //LogsUtilis.info("The Edge Browser Is Opened");
@@ -54,7 +54,7 @@ public class TC04_CheckOut {
     @BeforeMethod
     public void setup() throws IOException {
         // Condition ? ture or false
-        String browser = System.getProperty("Browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
+        String browser = System.getProperty("browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
                 LogsUtilis.info(System.getProperty("browser"));
         setupDriver(browser);
 

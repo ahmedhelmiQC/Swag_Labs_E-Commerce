@@ -35,7 +35,7 @@ public class TC02_Product {
     @BeforeClass
     public void login() throws IOException {
         // Condition ? ture or false
-        String browser = System.getProperty("Browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
+        String browser = System.getProperty("browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
             LogsUtilis.info(System.getProperty("browser"));
         setupDriver(browser);
         LogsUtilis.info("The Page Redirect To Home Page");
@@ -48,7 +48,7 @@ public class TC02_Product {
 
     @BeforeMethod
     public void setup() throws IOException {
-        String browser = System.getProperty("Browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
+        String browser = System.getProperty("browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
         LogsUtilis.info(System.getProperty("browser"));
         setupDriver(browser);
         getDriver().get(getPropertyData("environment","BASE_URL"));
