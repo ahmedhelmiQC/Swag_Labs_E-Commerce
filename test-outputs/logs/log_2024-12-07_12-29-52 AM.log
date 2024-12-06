@@ -1,0 +1,84 @@
+[INFO] 07-12-2024 00:29:52 [main] [Tests.TC01_Login.setup(TC01_Login.java:33)] - edge
+[INFO] 07-12-2024 00:29:56 [main] [Tests.TC01_Login.setup(TC01_Login.java:35)] - The Browser is opened
+[INFO] 07-12-2024 00:29:57 [main] [Tests.TC01_Login.setup(TC01_Login.java:37)] - Page Is Redirect To The Home Page
+[INFO] 07-12-2024 00:29:58 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test casevalidLoginTCStarted
+[INFO] 07-12-2024 00:29:59 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] - Test Case validLoginTCpassed
+[INFO] 07-12-2024 00:30:00 [main] [Tests.TC02_Product.login(TC02_Product.java:39)] - edge
+[INFO] 07-12-2024 00:30:03 [main] [Tests.TC02_Product.login(TC02_Product.java:41)] - The Page Redirect To Home Page
+[INFO] 07-12-2024 00:30:07 [main] [Tests.TC02_Product.setup(TC02_Product.java:52)] - edge
+[INFO] 07-12-2024 00:30:10 [main] [Tests.TC02_Product.setup(TC02_Product.java:55)] - Page Is Redirect To Home Page
+[INFO] 07-12-2024 00:30:11 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test caseaddAllProductTCStarted
+[INFO] 07-12-2024 00:30:11 [main] [Pages.P02_ProductPage.addAllProductsToCart(P02_ProductPage.java:33)] -  Number Of All Product : 6
+[INFO] 07-12-2024 00:30:12 [main] [Pages.P02_ProductPage.getNumberOfProductsOnCartIcon(P02_ProductPage.java:41)] - Number Of Product On Cart : 6
+[INFO] 07-12-2024 00:30:12 [main] [Pages.P02_ProductPage.getNumberOfSelectedProducts(P02_ProductPage.java:51)] - Number Of Selected Products : 6
+[INFO] 07-12-2024 00:30:12 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] - Test Case addAllProductTCpassed
+[INFO] 07-12-2024 00:30:14 [main] [Tests.TC02_Product.setup(TC02_Product.java:52)] - edge
+[INFO] 07-12-2024 00:30:17 [main] [Tests.TC02_Product.setup(TC02_Product.java:55)] - Page Is Redirect To Home Page
+[INFO] 07-12-2024 00:30:18 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test caseaddRandomProductsToCartTCStarted
+[INFO] 07-12-2024 00:30:18 [main] [Pages.P02_ProductPage.addRandomProducts(P02_ProductPage.java:74)] - Random Number :[1, 2, 4, 5, 6]
+[INFO] 07-12-2024 00:30:18 [main] [Pages.P02_ProductPage.getNumberOfProductsOnCartIcon(P02_ProductPage.java:41)] - Number Of Product On Cart : 5
+[INFO] 07-12-2024 00:30:18 [main] [Pages.P02_ProductPage.getNumberOfSelectedProducts(P02_ProductPage.java:51)] - Number Of Selected Products : 5
+[INFO] 07-12-2024 00:30:19 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] - Test Case addRandomProductsToCartTCpassed
+[INFO] 07-12-2024 00:30:20 [main] [Tests.TC02_Product.setup(TC02_Product.java:52)] - edge
+[INFO] 07-12-2024 00:30:22 [main] [Tests.TC02_Product.setup(TC02_Product.java:55)] - Page Is Redirect To Home Page
+[INFO] 07-12-2024 00:30:24 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test caseclickOnCartButtonStarted
+[INFO] 07-12-2024 00:30:24 [main] [Pages.P02_ProductPage.verifyCartPageURL(P02_ProductPage.java:84)] - Checkout_URL : true
+[INFO] 07-12-2024 00:30:24 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] - Test Case clickOnCartButtonpassed
+[INFO] 07-12-2024 00:30:25 [main] [Tests.TC03_Cart.login(TC03_Cart.java:39)] - edge
+[INFO] 07-12-2024 00:30:29 [main] [Tests.TC03_Cart.login(TC03_Cart.java:42)] - Page Is Redirect To Home Page
+[INFO] 07-12-2024 00:30:31 [main] [Tests.TC03_Cart.setup(TC03_Cart.java:52)] - edge
+[INFO] 07-12-2024 00:30:34 [main] [Tests.TC03_Cart.setup(TC03_Cart.java:54)] - Edge Browser Is Opened 
+[INFO] 07-12-2024 00:30:36 [main] [Tests.TC03_Cart.setup(TC03_Cart.java:56)] - Page Is Redirect To Home Page
+[INFO] 07-12-2024 00:30:36 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test caseclickONCheckOutButtonTCStarted
+[INFO] 07-12-2024 00:30:36 [main] [Pages.P02_ProductPage.addRandomProducts(P02_ProductPage.java:74)] - Random Number :[2, 3, 6]
+[INFO] 07-12-2024 00:30:37 [main] [Pages.P03_CartPage.clickingOnCheckOutButton(P03_CartPage.java:41)] - The Page Is Redirected to The CheckOut Page
+[INFO] 07-12-2024 00:30:37 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] - Test Case clickONCheckOutButtonTCpassed
+[INFO] 07-12-2024 00:30:39 [main] [Tests.TC03_Cart.setup(TC03_Cart.java:52)] - edge
+[INFO] 07-12-2024 00:30:41 [main] [Tests.TC03_Cart.setup(TC03_Cart.java:54)] - Edge Browser Is Opened 
+[INFO] 07-12-2024 00:30:42 [main] [Tests.TC03_Cart.setup(TC03_Cart.java:56)] - Page Is Redirect To Home Page
+[INFO] 07-12-2024 00:30:43 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test casecomparingPriceTCStarted
+[INFO] 07-12-2024 00:30:43 [main] [Pages.P02_ProductPage.addRandomProducts(P02_ProductPage.java:74)] - Random Number :[1, 2, 3, 4, 5]
+[INFO] 07-12-2024 00:30:44 [main] [Pages.P02_ProductPage.getTotalPriceOfSelectedProducts(P02_ProductPage.java:95)] - price of selected price5
+[INFO] 07-12-2024 00:30:44 [main] [Pages.P02_ProductPage.getTotalPriceOfSelectedProducts(P02_ProductPage.java:101)] - total Price :113.950005
+[INFO] 07-12-2024 00:30:44 [main] [Pages.P03_CartPage.getTotalPrice(P03_CartPage.java:30)] - total Price : 113.950005
+[INFO] 07-12-2024 00:30:44 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] - Test Case comparingPriceTCpassed
+[INFO] 07-12-2024 00:30:46 [main] [Tests.TC04_CheckOut.login(TC04_CheckOut.java:44)] - edge
+[INFO] 07-12-2024 00:30:50 [main] [Tests.TC04_CheckOut.login(TC04_CheckOut.java:48)] - The Page is Redirected To URL
+[INFO] 07-12-2024 00:30:52 [main] [Tests.TC04_CheckOut.setup(TC04_CheckOut.java:58)] - edge
+[INFO] 07-12-2024 00:30:55 [main] [Tests.TC04_CheckOut.setup(TC04_CheckOut.java:62)] - Page Is Redirect To The Home Page
+[INFO] 07-12-2024 00:30:55 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test casecheckOutTCStarted
+[INFO] 07-12-2024 00:30:55 [main] [Pages.P02_ProductPage.addRandomProducts(P02_ProductPage.java:74)] - Random Number :[1, 2, 3, 5, 6]
+[INFO] 07-12-2024 00:30:56 [main] [Pages.P03_CartPage.clickingOnCheckOutButton(P03_CartPage.java:41)] - The Page Is Redirected to The CheckOut Page
+[INFO] 07-12-2024 00:30:57 [main] [Tests.TC04_CheckOut.checkOutTC(TC04_CheckOut.java:76)] - ahmed helmi 22238
+[INFO] 07-12-2024 00:30:57 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] - Test Case checkOutTCpassed
+[INFO] 07-12-2024 00:30:58 [main] [Tests.TC05_OverView.login(TC05_OverView.java:41)] - edge
+[INFO] 07-12-2024 00:31:00 [main] [Tests.TC05_OverView.login(TC05_OverView.java:43)] - The Page Redirect To Home Page
+[INFO] 07-12-2024 00:31:01 [main] [Tests.TC05_OverView.login(TC05_OverView.java:45)] - Page Redirect To The URL
+[INFO] 07-12-2024 00:31:04 [main] [Tests.TC05_OverView.setup(TC05_OverView.java:57)] - edge
+[INFO] 07-12-2024 00:31:08 [main] [Tests.TC05_OverView.setup(TC05_OverView.java:60)] - The Page Redirected To The URL
+[INFO] 07-12-2024 00:31:08 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test casecomparingTotalPriceTCStarted
+[INFO] 07-12-2024 00:31:08 [main] [Pages.P02_ProductPage.addAllProductsToCart(P02_ProductPage.java:33)] -  Number Of All Product : 6
+[INFO] 07-12-2024 00:31:09 [main] [Pages.P03_CartPage.clickingOnCheckOutButton(P03_CartPage.java:41)] - The Page Is Redirected to The CheckOut Page
+[INFO] 07-12-2024 00:31:10 [main] [Pages.P05_OverView.getsubTotalAmount(P05_OverView.java:21)] - subTotalAmount129.94
+[INFO] 07-12-2024 00:31:10 [main] [Pages.P05_OverView.getTax(P05_OverView.java:25)] - Tax :10.40
+[INFO] 07-12-2024 00:31:10 [main] [Pages.P05_OverView.calculateTotalPrice(P05_OverView.java:33)] - Calculating Total Price140.34
+[INFO] 07-12-2024 00:31:10 [main] [Pages.P05_OverView.getsubTotalAmount(P05_OverView.java:21)] - subTotalAmount129.94
+[INFO] 07-12-2024 00:31:10 [main] [Pages.P05_OverView.getTax(P05_OverView.java:25)] - Tax :10.40
+[INFO] 07-12-2024 00:31:10 [main] [Pages.P05_OverView.actualTotalAmount(P05_OverView.java:29)] - Actual Total Amount140.34
+[INFO] 07-12-2024 00:31:11 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] - Test Case comparingTotalPriceTCpassed
+[INFO] 07-12-2024 00:31:12 [main] [Tests.TC05_OverView.setup(TC05_OverView.java:57)] - edge
+[INFO] 07-12-2024 00:31:15 [main] [Tests.TC05_OverView.setup(TC05_OverView.java:60)] - The Page Redirected To The URL
+[INFO] 07-12-2024 00:31:15 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test caseverifyURLTCStarted
+[INFO] 07-12-2024 00:31:16 [main] [Pages.P02_ProductPage.addAllProductsToCart(P02_ProductPage.java:33)] -  Number Of All Product : 6
+[INFO] 07-12-2024 00:31:17 [main] [Pages.P03_CartPage.clickingOnCheckOutButton(P03_CartPage.java:41)] - The Page Is Redirected to The CheckOut Page
+[INFO] 07-12-2024 00:31:17 [main] [Tests.TC05_OverView.verifyURLTC(TC05_OverView.java:78)] - The Page Is Redirected To The Finish Order Page
+[INFO] 07-12-2024 00:31:18 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] - Test Case verifyURLTCpassed
+[INFO] 07-12-2024 00:31:19 [main] [Tests.TC06_FinishOrder.login(TC06_FinishOrder.java:39)] - edge
+[INFO] 07-12-2024 00:31:22 [main] [Tests.TC06_FinishOrder.login(TC06_FinishOrder.java:42)] - Page Redirect To The Home Page
+[INFO] 07-12-2024 00:31:24 [main] [Tests.TC06_FinishOrder.setup(TC06_FinishOrder.java:51)] - edge
+[INFO] 07-12-2024 00:31:27 [main] [Tests.TC06_FinishOrder.setup(TC06_FinishOrder.java:54)] - Page Redirect To The Home Page
+[INFO] 07-12-2024 00:31:28 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test caseverifyThankMessageIsDisplayedTCStarted
+[INFO] 07-12-2024 00:31:28 [main] [Pages.P02_ProductPage.addAllProductsToCart(P02_ProductPage.java:33)] -  Number Of All Product : 6
+[INFO] 07-12-2024 00:31:29 [main] [Pages.P03_CartPage.clickingOnCheckOutButton(P03_CartPage.java:41)] - The Page Is Redirected to The CheckOut Page
+[INFO] 07-12-2024 00:31:29 [main] [Tests.TC06_FinishOrder.verifyThankMessageIsDisplayedTC(TC06_FinishOrder.java:68)] - ahmed  helmi 30640
+[INFO] 07-12-2024 00:31:30 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] - Test Case verifyThankMessageIsDisplayedTCpassed
