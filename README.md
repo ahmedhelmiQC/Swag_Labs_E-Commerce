@@ -6,7 +6,7 @@
 3- Maven project (POM)
 4- Generating test data using Java Fake library
 5- Publishing the code using Git and GitHub.
-6- Publishing the code 
+6- Publishing the code Jenkins
 
 🔵 Covering the following script:
 
