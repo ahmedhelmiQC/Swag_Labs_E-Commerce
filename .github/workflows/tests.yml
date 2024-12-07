@@ -1,4 +1,4 @@
-name: e2e testings
+name: E2E Testings
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
@@ -11,4 +11,4 @@ jobs:
           java-version: '21'
           distribution: 'oracle'
       - name: Run the Maven verify phase
-        run: mvn -PProfile clean test
+        run: mvn -PRegression clean test
