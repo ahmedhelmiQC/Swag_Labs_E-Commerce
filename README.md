@@ -9,7 +9,7 @@
 6. Screenshots.
 7. Allure report.
 8. Publishing the code using Git and GitHub.
-9. Pipeline the project using Jenkins for CI/CD Integration.
+9. Pipeline the project using Jenkins CI/CD Integration.
 
 🔵 Project Design :
     Page Object Model (POM) 
