@@ -48,7 +48,7 @@
                 <executions>
                     <execution>
                         <phase>test</phase>
-
+                         <!-- <goals><goal>serve</goal></goals> !-->
                     </execution>
                 </executions>
                 <configuration>
@@ -79,7 +79,7 @@
     </build>
     <profiles>
         <profile>
-            <id>Profile</id>
+            <id>Regression</id>
             <build>
                 <plugins>
                     <!-- Reconfigure plugins for regression profile -->

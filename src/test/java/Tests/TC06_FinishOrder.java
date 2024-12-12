@@ -35,10 +35,9 @@ public class TC06_FinishOrder {
     @BeforeClass
     private void login() throws IOException {
         // Condition ? ture or false
-        String browser = System.getProperty("Browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
+        String browser = System.getProperty("browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
         LogsUtilis.info(System.getProperty("browser"));
         setupDriver(browser);
-        LogsUtilis.info("The Page Redirect To Home Page");
         getDriver().get(getPropertyData("environment","BASE_URL"));
              LogsUtilis.info("Page Redirect To The Home Page");
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -48,7 +47,7 @@ public class TC06_FinishOrder {
     }
     @BeforeMethod
     private void setup() throws IOException {
-        String browser = System.getProperty("Browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
+        String browser = System.getProperty("browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
         LogsUtilis.info(System.getProperty("browser"));
         setupDriver(browser);
         getDriver().get(getPropertyData("environment","BASE_URL"));
