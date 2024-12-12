@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Set;
 
 import static Utilities.Utility.generalWait;
+
 public class P02_ProductPage {
 
     private static List<WebElement> allProducts;
