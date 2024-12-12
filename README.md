@@ -1,5 +1,6 @@
-    SwagLabs E-Commerce
-🔵 Technology used:
+   
+                    **SwagLabs E-Commerce**
+🔵 **Technology used**:
 
 1. Java and OOP concepts.
 2. selenium 4 web driver.
@@ -9,12 +10,12 @@
 6. Screenshots.
 7. Allure report.
 8. Publishing the code using Git and GitHub.
-9. Pipeline the project using Jenkins CI/CD Integration.
+9. Implement the project pipeline using Jenkins for(**CI/CD**) .
 
-🔵 Project Design :
-    Page Object Model (POM) 
+🔵 **Project Design** :
+*   Page Object Model (POM) 
 
-🔵 Covering the following script:
+🔵 **Covering the following script**:
 
 *  Login with valid scenarios.
 *  A logged User could add all products to the Shopping cart.
