@@ -5,15 +5,16 @@
 1. Java and OOP concepts.
 2. selenium 4 web driver.
 3. TestNG framework.
-4. Run with MVN CMD.
-5. Java Faker for Data-Driven.
-6. Screenshots.
-7. Allure report.
-8. Publishing the code using Git and GitHub.
-9. Implement the project pipeline using Jenkins for(**CI/CD**) .
+4. POM (Design pattern)
+5. Run with MVN CMD.
+6. Java Faker for Data-Driven.
+7. Screenshots.
+8. Allure report.
+9. Publishing the code using Git and GitHub.
+10.Implement the project pipeline using Jenkins for(**CI/CD**) .
 
 🔵 **Project Design** :
-*   Page Object Model (POM) 
+*   Page Object Model (Design pattern) 
 
 🔵 **Covering the following script**:
 
