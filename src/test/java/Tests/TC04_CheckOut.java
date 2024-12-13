@@ -40,9 +40,10 @@ public class TC04_CheckOut {
     }
     @BeforeClass
     public void login() throws IOException {
-        String browser = getPropertyData("environment","Browser");
+        String browser = System.getProperty("browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
+        LogsUtilis.info(System.getProperty("browser"));
         setupDriver(browser);
-        LogsUtilis.info("The Edge Browser Is Opened");
+        //LogsUtilis.info("The Edge Browser Is Opened");
         getDriver().get(getPropertyData("environment","BASE_URL"));
         LogsUtilis.info("The Page is Redirected To URL");
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -52,12 +53,13 @@ public class TC04_CheckOut {
     }
     @BeforeMethod
     public void setup() throws IOException {
-        String browser = getPropertyData("environment","Browser");
-        LogsUtilis.info(getProperty(browser));
+        // Condition ? ture or false
+        String browser = System.getProperty("browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
+                LogsUtilis.info(System.getProperty("browser"));
         setupDriver(browser);
-        LogsUtilis.info("Edge Browser is Opened" );
+
         getDriver().get(getPropertyData("environment","BASE_URL"));
-        LogsUtilis.info("Page Is Redirect To The Home Page");
+            LogsUtilis.info("Page Is Redirect To The Home Page");
         restoreSession(getDriver(),cookies);
         getDriver().get(getPropertyData("environment","HOME_URL"));
 

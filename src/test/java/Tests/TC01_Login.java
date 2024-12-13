@@ -28,13 +28,14 @@ public class TC01_Login {
 
     @BeforeMethod
     public void setup() throws IOException {
-        String browser = getPropertyData("environment","Browser");
-        LogsUtilis.info(getProperty("browser"));
+        // Condition ? ture or false
+        String browser = System.getProperty("Browser") !=null? System.getProperty("browser") : getPropertyData("environment","Browser");
+        LogsUtilis.info(System.getProperty("browser"));
         setupDriver(browser);
-        LogsUtilis.info("EdgeDriver is opened");
+        LogsUtilis.info("The Browser is opened");
         getDriver().get(getPropertyData("environment","BASE_URL"));
         LogsUtilis.info("Page Is Redirect To The Home Page");
-        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
     }
     @Test
     public void validLoginTC() throws IOException {

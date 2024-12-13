@@ -37,8 +37,10 @@ public class TC05_OverView {
     @BeforeClass
     public void login() throws IOException {
 
-        setupDriver(getPropertyData("environment","Browser"));
-        LogsUtilis.info("Edge Browser Is Opened");
+        String browser = System.getProperty("browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
+        LogsUtilis.info(System.getProperty("browser"));
+        setupDriver(browser);
+        LogsUtilis.info("The Page Redirect To Home Page");
         getDriver().get(getPropertyData("environment", "BASE_URL"));
         LogsUtilis.info("Page Redirect To The URL");
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -50,11 +52,12 @@ public class TC05_OverView {
    }
     @BeforeMethod
     public void setup() throws IOException {
-        String browser = getPropertyData("environment","Browser");
-        LogsUtilis.info("Edge Browser Is Opened");
+        // Condition ? ture or false
+        String browser = System.getProperty("browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
+                LogsUtilis.info(System.getProperty("browser"));
         setupDriver(browser);
         getDriver().get(getPropertyData("environment","BASE_URL"));
-        LogsUtilis.info("The Page Redirected To The URL");
+                LogsUtilis.info("The Page Redirected To The URL");
        restoreSession(getDriver(),cookies);
         getDriver().get(getPropertyData("environment","HOME_URL"));
         getDriver().navigate().refresh();

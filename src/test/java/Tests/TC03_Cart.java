@@ -35,10 +35,9 @@ public class TC03_Cart {
     }
     @BeforeClass
     public void login() throws IOException {
-        String browser = getPropertyData("environment","Browser");
-        LogsUtilis.info(getProperty("browser"));
+        String browser = System.getProperty("browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
+        LogsUtilis.info(System.getProperty("browser"));
         setupDriver(browser);
-        LogsUtilis.info("Edge Browser Is Opened ");
         getDriver().get(getPropertyData("environment","BASE_URL"));
         LogsUtilis.info("Page Is Redirect To Home Page");
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -48,8 +47,9 @@ public class TC03_Cart {
     }
   @BeforeMethod
         public void setup() throws IOException {
-            String browser = getPropertyData("environment","Browser");
-            LogsUtilis.info(getProperty("browser"));
+      // Condition ? ture or false
+      String browser = System.getProperty("browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
+            LogsUtilis.info(System.getProperty("browser"));
             setupDriver(browser);
             LogsUtilis.info("Edge Browser Is Opened ");
             getDriver().get(getPropertyData("environment","BASE_URL"));

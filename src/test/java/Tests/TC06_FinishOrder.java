@@ -34,10 +34,12 @@ public class TC06_FinishOrder {
     }
     @BeforeClass
     private void login() throws IOException {
-        setupDriver(getPropertyData("environment","Browser"));
-        LogsUtilis.info("The Edge Browser Is Opened");
+        // Condition ? ture or false
+        String browser = System.getProperty("browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
+        LogsUtilis.info(System.getProperty("browser"));
+        setupDriver(browser);
         getDriver().get(getPropertyData("environment","BASE_URL"));
-        LogsUtilis.info("Page Redirect To The Home Page");
+             LogsUtilis.info("Page Redirect To The Home Page");
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         new P01_LoginPage(getDriver()).enterUserName(UserName).enterPassword(Password).clickOnLoginButton();
          cookies = getAllCookies(getDriver());
@@ -45,8 +47,9 @@ public class TC06_FinishOrder {
     }
     @BeforeMethod
     private void setup() throws IOException {
-        setupDriver(getPropertyData("environment","Browser"));
-        LogsUtilis.info("The Edge Browser Is Opened");
+        String browser = System.getProperty("browser") !=null ? System.getProperty("browser") : getPropertyData("environment","Browser");
+        LogsUtilis.info(System.getProperty("browser"));
+        setupDriver(browser);
         getDriver().get(getPropertyData("environment","BASE_URL"));
         LogsUtilis.info("Page Redirect To The Home Page");
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

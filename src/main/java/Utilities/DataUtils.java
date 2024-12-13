@@ -9,6 +9,7 @@ import java.util.Properties;
 public class DataUtils {
     private static final String TEST_DATA_PATH = "src/test/resources/TestData/";
 
+    // Retrieve a specific field value from a JSON file
     public static String getJosnData(String filename , String field) throws FileNotFoundException {
         try {
             FileReader reader = new FileReader(TEST_DATA_PATH +filename+".json");
@@ -23,6 +24,7 @@ public class DataUtils {
         return "";
     }
 
+    // Retrieve a key's value from a properties file
     public static String getPropertyData(String filename , String key) throws IOException {
         Properties properties = new Properties();
         properties.load(new FileInputStream(TEST_DATA_PATH +filename+".properties"));

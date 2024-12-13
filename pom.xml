@@ -24,31 +24,92 @@
         <shutterbug>1.6</shutterbug>  <!-- Take Full Screen Shoot !-->
         <commons>2.17.0</commons>  <!-- FileUtils.copyFile from Apache Commons IO is used to copy the screenshot file!-->
         <surfire-plugin>3.5.1</surfire-plugin>
-        <allure-maven>2.10.0</allure-maven>
+        <allure-maven>2.12.0</allure-maven>
+        <allureAPI.version>2.32.0</allureAPI.version>
         <aspectj.version>1.9.22.1</aspectj.version>
-
+        <suite.login>Testrunner/LoginSuite.xml</suite.login>
+        <suite.landing>Testrunner/Landing Suite.xml</suite.landing>
+        <suite.cart>Testrunner/CartSuite.xml</suite.cart>
+        <suite.checkout>Testrunner/CheckOutSuite.xml</suite.checkout>
+        <suite.overview>Testrunner/OverViewSuite.xml</suite.overview>
+        <suite.finishorder>Testrunner/FinishOrderSuite.xml</suite.finishorder>
+        <suite.regression>Testrunner/RegressionOrderSuite.xml</suite.regression>
     </properties>
     <build>
+        <!-- Custom directory for build outputs -->
         <directory>test-outputs/target</directory>
-        <plugins>     <!-- Add the following options to your maven-surefire-plugin -->
+
+        <plugins>
+            <!-- Allure Maven Plugin: Generates Allure test reports -->
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure-maven}</version>
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                         <!-- <goals><goal>serve</goal></goals> !-->
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- Allure TestNG adapter version -->
+                    <reportVersion>${allure-testng}</reportVersion>
+                </configuration>
+            </plugin>
+            <!-- Add the following options to your maven-surefire-plugin -->
             <plugin>  <!--used to run unit tests and integration tests in a Maven-->
+                <!-- Using Maven Surefire Plugin to execute test cases -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surfire-plugin}</version>
+                <!-- Version defined elsewhere -->
                 <configuration>
+                    <!-- Add JVM argument to enable AspectJ runtime weaving -->
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
+                    <!-- Define the suite XML files to execute specific test cases -->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suite.regression}</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${surfire-plugin}</version> <!-- Replace with the desired version -->
-            </plugin>
-            <!-- Allure Maven Plugin -->
-            </plugins>
+
+        </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>Regression</id>
+            <build>
+                <plugins>
+                    <!-- Reconfigure plugins for regression profile -->
+                           <!-- Allure Maven Plugin -->
+                        <plugin>
+                            <groupId>io.qameta.allure</groupId>
+                            <artifactId>allure-maven</artifactId>
+
+                             <configuration>
+                                <reportVersion>${allure-testng}</reportVersion>
+                            </configuration>
+                        </plugin>
+                              <plugin>  <!--used to run unit tests and integration tests in a Maven-->
+                                <!-- Using Maven Surefire Plugin to execute test cases -->
+                                <groupId>org.apache.maven.plugins</groupId>
+                                <artifactId>maven-surefire-plugin</artifactId>
+
+                                <configuration>
+                                  <!-- Define the suite XML files to execute specific test cases -->
+                                    <suiteXmlFiles>
+                                        <suiteXmlFile>
+                                            ${suite.regression}
+                                        </suiteXmlFile>
+                                    </suiteXmlFiles>
+                                </configuration>
+                              </plugin>
+                 </plugins>
+            </build>
+        </profile>
+    </profiles>
 
         <dependencies>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -134,7 +195,14 @@
                 <artifactId>aspectjweaver</artifactId>
                 <version>${aspectj.version}</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-plugin-api -->
+            <dependency>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-plugin-api</artifactId>
+                <version>${allureAPI.version}</version>
+            </dependency>
 
-    </dependencies>
+
+        </dependencies>
 
 </project>
