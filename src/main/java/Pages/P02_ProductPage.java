@@ -31,6 +31,7 @@ public class P02_ProductPage {
     public P02_ProductPage addAllProductsToCart(){
         allProducts = driver.findElements(addToCartButtonForAllProducts);
         LogsUtilis.info(" Number Of All Product : " + allProducts.size());
+
         for (int i=1 ; i<=allProducts.size() ; i++){
             By addToCartButtonForAllProducts = By.xpath("(//button[@class])["+ i +"]");
             Utility.clickingOnElement(driver,addToCartButtonForAllProducts);
